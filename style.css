@@ -1,0 +1,122 @@
+.dropdown-button {
+    color: black;
+    background-color: skyblue;
+    padding: 16px;
+    font-size: 16px;
+    width: 160px;
+    border: none;
+}
+
+.dropdown:hover, .dropdown:focus{
+    background-color: yellow;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: hotpink;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
+
+.mobilemenu {
+    display: flex;
+    align-items: flex-start;
+}
+
+.menu-start {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    color: white;
+    border: red;
+    box-shadow: 2px 2px 5px plum;
+}
+
+.menu-option {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: orangered;
+    color: white;
+    border: orangered;
+    box-shadow: 2px 2px 5px plum;
+    margin: 0px 5px 0px 5px;
+}
+
+.mobilemenu-options {
+    display: none;
+}
+
+.open {
+    display: flex;
+    align-items: flex-start;
+}
+
+.wrapper{
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    background-color: blue;
+}
+
+.slide {
+    width: 500px;
+    height: 400px;
+    position: relative;
+    top: 100px;
+    left: 150px;
+}
+
+/*
+.slide img {
+    transition: all 0.3s ease;
+}
+*/
+
+.hide-slide {
+    display: none;
+}
+
+.navigation {
+    margin: auto;
+    position: relative;
+    left: 50%;
+}
+
+.prev {
+    font-size: xx-large;
+    border-radius: 20px 0px 0px 20px;
+    color: hotpink;
+}
+
+.next {
+    font-size: xx-large;
+    border-radius: 20px 0px 0px 20px;
+    color: hotpink;
+}
