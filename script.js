@@ -35,27 +35,38 @@ document.getElementById('menu-start').addEventListener('click', function(e) {
 
 const slide = document.querySelector('.slide');
 const images = document.querySelectorAll('.slide img');
+const nextButton = document.getElementById('nextButton');
+const prevButton = document.getElementById('prevButton');
+const dot0 = document.getElementById('dot0');
+const dot1 = document.getElementById('dot1');
+const dot2 = document.getElementById('dot2');
 
 let counter = 0;
 let totalImages = images.length;
 
 showImage(counter);
 
-// remove all other hide slides then add the correct ones?
 function showImage(index) {
+    console.log('counter index: ' + index);
     for(let i=0; i<images.length; i++) {
-        if(images[i].classList.contains('hide-slide')) {
-            images[i].classList.remove('hide-slide');
+        if(i === index) {
+            let imgToShow = document.getElementById(i);
+            imgToShow.style.opacity = 1;
+            let dotToShow = document.getElementById('dot' + i);
+            dotToShow.classList.add('active');
         }
-    }
-    for(let i=0; i<images.length; i++) {
-        if(i != counter) {
-            images[i].classList.add('hide-slide');
+        else {
+            let hide = document.getElementById(i);
+            hide.style.opacity = 0;
+            let dotToHide = document.getElementById('dot' + i);
+            if(dotToHide.classList.contains('active')) {
+                dotToHide.classList.remove('active');
+            }
         }
     }
 }
 
-nextButton.addEventListener('click', function(e) {
+function nextSlide(e) {
     if ((counter+1) === totalImages) {
         counter = 0;
     }
@@ -63,7 +74,9 @@ nextButton.addEventListener('click', function(e) {
         counter++;
     }
     showImage(counter);
-})
+}
+
+nextButton.addEventListener('click', nextSlide);
 
 prevButton.addEventListener('click', function(e) {
     if ((counter-1) === -1) {
@@ -74,3 +87,9 @@ prevButton.addEventListener('click', function(e) {
     }
     showImage(counter);
 })
+
+dot0.addEventListener('click', () => showImage(counter=0));
+dot1.addEventListener('click', () => showImage(counter=1));
+dot2.addEventListener('click', () => showImage(counter=2));
+
+setInterval(nextSlide, 3000);
