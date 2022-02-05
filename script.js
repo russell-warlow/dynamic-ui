@@ -47,7 +47,6 @@ let totalImages = images.length;
 showImage(counter);
 
 function showImage(index) {
-    console.log('counter index: ' + index);
     for(let i=0; i<images.length; i++) {
         if(i === index) {
             let imgToShow = document.getElementById(i);

@@ -104,18 +104,16 @@
     text-align: center;
 }
 
-.prev {
+.prev, .next {
     cursor: pointer;
     font-size: xx-large;
-    border-radius: 20px 0px 0px 20px;
     color: hotpink;
+    width: 80px;
+    display: inline-block;
 }
 
-.next {
-    cursor: pointer;
-    font-size: xx-large;
-    border-radius: 20px 0px 0px 20px;
-    color: hotpink;
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
 }
 
 .dot-nav {
